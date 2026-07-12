@@ -167,7 +167,7 @@ h1 { font-weight: 800; }
   padding-block: 0.85rem;
   gap: 1rem;
 }
-.nav__logo img { height: 34px; width: auto; display: block; }
+.nav__logo img { height: 46px; width: auto; display: block; }
 .nav__toggle {
   display: inline-flex;
   align-items: center;
@@ -208,6 +208,13 @@ h1 { font-weight: 800; }
 .nav__links a[aria-current="page"] { color: var(--gold); }
 .nav__links .btn { margin-top: 1rem; align-self: flex-start; }
 
+/* higher specificity than ".nav__links a" so the button keeps its own color/padding/border */
+.nav__links a.btn {
+  color: var(--black);
+  padding: 0.85rem 1.6rem;
+  border-bottom: none;
+}
+
 @media (min-width: 900px) {
   .nav__toggle { display: none; }
   .nav__links {
@@ -221,8 +228,10 @@ h1 { font-weight: 800; }
     background: none;
     inset: auto;
     overflow: visible;
+    gap: 1.75rem;
   }
   .nav__links a { border-bottom: none; padding: 0.4rem 0.15rem; }
+  .nav__links a.btn { padding: 0.75rem 1.4rem; }
   .nav__links .btn { margin-top: 0; margin-left: 0.5rem; }
 }
 
@@ -288,7 +297,8 @@ h1 { font-weight: 800; }
   align-items: center;
   padding-block: 1.75rem;
 }
-.promo-band__media img { border-radius: var(--radius); }
+.promo-band__media { min-width: 0; }
+.promo-band__media img { width: 100%; height: auto; border-radius: var(--radius); }
 .promo-band__eyebrow { color: var(--gold); }
 .promo-band h2 { font-size: clamp(1.3rem, 3.2vw, 1.9rem); margin-top: 0.35rem; }
 .promo-band__meta {
