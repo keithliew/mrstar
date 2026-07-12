@@ -1,0 +1,6 @@
+# Raw source photos (145 originals) — not shipped, only optimized WebP in assets/img/ ships
+/mrstar/
+
+# macOS metadata
+._*
+.DS_Store
